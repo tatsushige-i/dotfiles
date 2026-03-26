@@ -1,0 +1,5 @@
+[user]
+    name = tatsushige-i
+    email = 260156339+tatsushige-i@users.noreply.github.com
+[core]
+    excludesfile = ~/.gitignore_global
