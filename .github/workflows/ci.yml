@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@2.0.0
+        with:
+          scandir: init
+
+  stow-dry-run:
+    name: Stow dry-run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install stow
+        run: sudo apt-get update && sudo apt-get install -y stow
+
+      - name: Run stow --simulate
+        run: |
+          TARGET_DIR="$(mktemp -d)"
+          for pkg in git zsh; do
+            echo "=== Simulating stow for $pkg ==="
+            stow --simulate -v -d "$GITHUB_WORKSPACE" -t "$TARGET_DIR" "$pkg"
+          done
