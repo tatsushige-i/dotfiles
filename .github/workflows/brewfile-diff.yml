@@ -1,0 +1,76 @@
+name: Brewfile Diff
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+jobs:
+  brewfile-diff:
+    name: Brewfile diff check
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Dump current packages
+        run: brew bundle dump --file=/tmp/Brewfile.dump --force
+
+      - name: Compare Brewfile
+        id: diff
+        run: |
+          if diff_output=$(diff Brewfile /tmp/Brewfile.dump); then
+            echo "No differences found."
+            echo "has_diff=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Differences found:"
+            echo "$diff_output"
+            echo "has_diff=true" >> "$GITHUB_OUTPUT"
+
+            {
+              echo "diff_body<<EOF"
+              echo "$diff_output"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write job summary
+        if: steps.diff.outputs.has_diff == 'true'
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<'HEADER'
+          ## Brewfile 差分検知
+
+          ```diff
+          HEADER
+          echo "${{ steps.diff.outputs.diff_body }}" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Create issue if diff detected
+        if: steps.diff.outputs.has_diff == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          existing=$(gh issue list --label "brewfile-drift" --state open --json number --jq 'length')
+          if [ "$existing" -gt 0 ]; then
+            echo "Open brewfile-drift issue already exists. Skipping."
+            exit 0
+          fi
+
+          gh issue create \
+            --title "chore: Brewfileの差分を検知しました" \
+            --label "chore,brewfile-drift" \
+            --body "$(cat <<BODY
+          ## 概要
+
+          \`brew bundle dump\` の出力とリポジトリの Brewfile に差分が検出されました。
+
+          ## 差分
+
+          \`\`\`diff
+          ${{ steps.diff.outputs.diff_body }}
+          \`\`\`
+
+          ## 対応
+
+          差分を確認し、必要に応じて \`make brewsync\` で Brewfile を更新してください。
+          BODY
+          )"
