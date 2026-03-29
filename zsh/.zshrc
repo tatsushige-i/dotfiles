@@ -1,6 +1,9 @@
 # PATH
 export PATH="$HOME/.local/bin:$PATH"
 
+# Dotfiles
+DOTFILES_DIR=~/projects/dotfiles
+
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -48,3 +51,12 @@ alias gsw='git switch'
 # Options
 setopt auto_cd
 setopt correct
+
+# Dotfiles dirty check
+_dotfiles_dirty_check() {
+    [[ -d "$DOTFILES_DIR" ]] || return
+    if [[ -n "$(git -C "$DOTFILES_DIR" status --porcelain 2>/dev/null)" ]]; then
+        print -P "%F{yellow}⚠ dotfiles に未コミットの変更があります ($DOTFILES_DIR)%f"
+    fi
+}
+_dotfiles_dirty_check
