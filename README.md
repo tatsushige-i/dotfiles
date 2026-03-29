@@ -32,6 +32,12 @@ Create symlinks with stow:
 make link
 ```
 
+Apply macOS defaults:
+
+```bash
+make macos
+```
+
 ### Maintenance
 
 Sync current Homebrew packages to Brewfile:
@@ -48,7 +54,8 @@ dotfiles/
 ├── Brewfile
 ├── init/
 │   ├── brew.sh        # Homebrew installation and package management
-│   └── link.sh        # Symlink management with stow
+│   ├── link.sh        # Symlink management with stow
+│   └── macos.sh       # macOS defaults configuration
 ├── zsh/
 │   ├── .zshrc
 │   └── .zprofile
