@@ -79,5 +79,24 @@ dotfiles/
 └── vscode/
     ├── settings.json
     ├── keybindings.json
+    ├── mcp.json           # MCP server configuration
     └── extensions.txt
 ```
+
+## MCP Server Configuration
+
+MCP server configuration is managed in `vscode/mcp.json` (symlinked to `~/Library/Application Support/Code/User/mcp.json` via `make link`).
+
+### Managed Servers
+
+| Server | URL | Auth |
+|---|---|---|
+| Atlassian Rovo MCP Server | https://mcp.atlassian.com/v1/mcp | OAuth (browser) |
+
+### Authentication
+
+On first setup, sign in to the Atlassian server from the MCP Servers section in the VS Code extensions panel (a browser window will open for Atlassian account authentication).
+
+### Not Managed
+
+`~/Library/Application Support/Code/User/mcp/` (downloaded server binary cache) is not tracked in this repository.
