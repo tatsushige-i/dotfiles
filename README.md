@@ -66,7 +66,10 @@ dotfiles/
 ├── zsh/
 │   ├── .zshrc
 │   └── .zprofile
-└── git/
-    ├── .gitconfig
-    └── .gitignore_global
+├── git/
+│   ├── .gitconfig
+│   └── .gitignore_global
+└── vscode/
+    ├── settings.json
+    └── keybindings.json
 ```
