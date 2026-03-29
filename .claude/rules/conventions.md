@@ -43,3 +43,17 @@ Format: `<prefix><concise-english-description>` (hyphens separated)
 
 - git commit / push
 - Issue・PRのステータス変更
+
+## Makefile
+
+### Script Placement
+
+初期化・セットアップ用スクリプトは `init/` ディレクトリに配置する（`scripts/` は使用しない）。
+
+### Target Order
+
+ターゲットの記載順は **Setup → Maintenance** の順とする（README の構成と一致させる）。
+
+### make init への追加基準
+
+新しいセットアップ手順を追加する場合、初期セットアップ（新しいマシンへの環境構築）に必要であれば `init:` の依存に含める。
