@@ -12,5 +12,14 @@
     "explorer.confirmDelete": false,
     "git.enableSmartCommit": true,
     "claudeCode.preferredLocation": "panel",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        100
+    ],
+    "editor.minimap.enabled": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.autoSave": "onFocusChange"
 }
