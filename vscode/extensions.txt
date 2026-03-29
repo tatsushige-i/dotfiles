@@ -1,0 +1,6 @@
+anthropic.claude-code
+github.copilot-chat
+github.vscode-github-actions
+ms-azuretools.vscode-containers
+ms-ceintl.vscode-language-pack-ja
+ms-vscode-remote.remote-containers
