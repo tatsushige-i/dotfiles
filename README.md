@@ -14,7 +14,7 @@ make init
 
 ### Setup
 
-Full setup (runs brew + link):
+Full setup (runs brew + link + macos + vscode-extensions):
 
 ```bash
 make init
@@ -38,6 +38,12 @@ Apply macOS defaults:
 make macos
 ```
 
+Install VS Code extensions from `vscode/extensions.txt`:
+
+```bash
+make vscode-extensions
+```
+
 ### Maintenance
 
 Sync current Homebrew packages to Brewfile:
@@ -59,10 +65,11 @@ dotfiles/
 ├── Makefile
 ├── Brewfile
 ├── init/
-│   ├── brew.sh        # Homebrew installation and package management
-│   ├── link.sh        # Symlink management with stow
-│   ├── macos.sh       # macOS defaults configuration
-│   └── macos_check.sh # Check drift between macos.sh and current settings
+│   ├── brew.sh                      # Homebrew installation and package management
+│   ├── link.sh                      # Symlink management with stow
+│   ├── macos.sh                     # macOS defaults configuration
+│   ├── macos_check.sh               # Check drift between macos.sh and current settings
+│   └── install-vscode-extensions.sh # Install VS Code extensions
 ├── zsh/
 │   ├── .zshrc
 │   └── .zprofile
@@ -71,5 +78,6 @@ dotfiles/
 │   └── .gitignore_global
 └── vscode/
     ├── settings.json
-    └── keybindings.json
+    ├── keybindings.json
+    └── extensions.txt
 ```
