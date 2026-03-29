@@ -46,6 +46,12 @@ Sync current Homebrew packages to Brewfile:
 make brewsync
 ```
 
+Check for drift between macos.sh and current macOS settings:
+
+```bash
+make macoscheck
+```
+
 ## Structure
 
 ```
@@ -55,7 +61,8 @@ dotfiles/
 ├── init/
 │   ├── brew.sh        # Homebrew installation and package management
 │   ├── link.sh        # Symlink management with stow
-│   └── macos.sh       # macOS defaults configuration
+│   ├── macos.sh       # macOS defaults configuration
+│   └── macos_check.sh # Check drift between macos.sh and current settings
 ├── zsh/
 │   ├── .zshrc
 │   └── .zprofile

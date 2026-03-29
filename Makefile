@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: init brew link macos brewsync
+.PHONY: init brew link macos brewsync macoscheck
 
 init: brew link macos
 
@@ -15,3 +15,6 @@ macos:
 
 brewsync:
 	brew bundle dump --file=Brewfile --force
+
+macoscheck:
+	@bash init/macos_check.sh
