@@ -21,5 +21,6 @@
     "editor.minimap.enabled": false,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.hideOnStartup": "never"
 }
