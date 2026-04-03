@@ -12,6 +12,12 @@ make init
 
 ## Make
 
+Make targets are organized into the following categories:
+
+- **Setup**: Apply repository settings to local environment (run all at once with `make init`)
+- **Maintenance - Check**: Check for drift between repository and local state (read-only)
+- **Maintenance - Sync**: Reflect current local state back into the repository
+
 ### Setup
 
 Full setup (runs brew + link + macos + vscode-extensions):
