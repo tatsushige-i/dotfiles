@@ -44,7 +44,21 @@ Install VS Code extensions from `vscode/extensions.txt`:
 make vscode-extensions
 ```
 
-### Maintenance
+### Maintenance - Check
+
+Check for drift between macos.sh and current macOS settings:
+
+```bash
+make macoscheck
+```
+
+Check for differences between `vscode/extensions.txt` and locally installed extensions:
+
+```bash
+make vscodecheck
+```
+
+### Maintenance - Sync
 
 Sync current Homebrew packages to Brewfile:
 
@@ -52,10 +66,10 @@ Sync current Homebrew packages to Brewfile:
 make brewsync
 ```
 
-Check for drift between macos.sh and current macOS settings:
+Sync locally installed VS Code extensions to `vscode/extensions.txt`:
 
 ```bash
-make macoscheck
+make vscodesync
 ```
 
 ## Structure
@@ -69,7 +83,9 @@ dotfiles/
 │   ├── link.sh                      # Symlink management with stow
 │   ├── macos.sh                     # macOS defaults configuration
 │   ├── macos_check.sh               # Check drift between macos.sh and current settings
-│   └── install-vscode-extensions.sh # Install VS Code extensions
+│   ├── install-vscode-extensions.sh # Install VS Code extensions
+│   ├── vscode_check.sh             # Check drift between extensions.txt and local extensions
+│   └── vscode_sync.sh              # Sync local extensions to extensions.txt
 ├── zsh/
 │   ├── .zshrc
 │   └── .zprofile

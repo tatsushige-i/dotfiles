@@ -1,7 +1,8 @@
 SHELL := /bin/bash
 
-.PHONY: init brew link macos vscode-extensions brewsync macoscheck
+.PHONY: init brew link macos vscode-extensions macoscheck vscodecheck brewsync vscodesync
 
+# Setup
 init: brew link macos vscode-extensions
 
 brew:
@@ -16,8 +17,16 @@ macos:
 vscode-extensions:
 	@bash init/install-vscode-extensions.sh
 
+# Maintenance - Check
+macoscheck:
+	@bash init/macos_check.sh
+
+vscodecheck:
+	@bash init/vscode_check.sh
+
+# Maintenance - Sync
 brewsync:
 	brew bundle dump --file=Brewfile --force
 
-macoscheck:
-	@bash init/macos_check.sh
+vscodesync:
+	@bash init/vscode_sync.sh
