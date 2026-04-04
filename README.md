@@ -40,7 +40,7 @@ make link
 
 | Source | Target |
 |---|---|
-| `zsh/`, `git/` | `$HOME` |
+| `zsh/`, `git/`, `wezterm/`, `starship/` | `$HOME` |
 | `vscode/` | `~/Library/Application Support/Code/User` |
 
 Uses `--adopt` to incorporate existing files, then restores repo versions with `git checkout -- .`.
@@ -111,6 +111,13 @@ dotfiles/
 ├── git/
 │   ├── .gitconfig
 │   └── .gitignore_global
+├── wezterm/.config/wezterm/
+│   ├── wezterm.lua                   # Main configuration
+│   ├── background.lua                # Background layers (gradient + image)
+│   ├── keybinds.lua                  # Key bindings
+│   └── background.png                # Background image (dummy in repo)
+├── starship/.config/
+│   └── starship.toml                 # Starship prompt configuration
 └── vscode/
     ├── settings.json
     ├── keybindings.json

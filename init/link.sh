@@ -3,7 +3,7 @@ set -euo pipefail
 
 DOTFILES_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
-PACKAGES=(zsh git)
+PACKAGES=(zsh git wezterm starship)
 
 for pkg in "${PACKAGES[@]}"; do
     echo "Linking $pkg..."

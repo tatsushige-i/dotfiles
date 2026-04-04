@@ -20,14 +20,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-# Prompt
-autoload -Uz vcs_info
-precmd() { vcs_info }
-setopt prompt_subst
-
-zstyle ':vcs_info:git:*' formats '%b'
-
-PROMPT='%F{cyan}%~%f %F{green}${vcs_info_msg_0_:+($vcs_info_msg_0_) }%f%F{yellow}$%f '
+# Prompt (Starship)
+eval "$(starship init zsh)"
 
 # Aliases - General
 alias ll='ls -lAF'

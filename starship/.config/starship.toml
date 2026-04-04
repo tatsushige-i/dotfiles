@@ -1,0 +1,36 @@
+format = """
+$os\
+$directory\
+$git_branch\
+$git_status\
+$time\
+$line_break\
+$character"""
+
+[os]
+disabled = false
+style = "white"
+
+[os.symbols]
+Macos = " "
+
+[directory]
+style = "bold cyan"
+truncation_length = 3
+
+[git_branch]
+style = "green"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "red"
+
+[time]
+disabled = false
+format = " ◎ $time"
+time_format = "%H:%M"
+style = "white"
+
+[character]
+success_symbol = "[❯](yellow)"
+error_symbol = "[❯](red)"
