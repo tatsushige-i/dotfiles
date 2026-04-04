@@ -98,13 +98,13 @@ dotfiles/
 ├── Makefile
 ├── Brewfile
 ├── init/
-│   ├── brew.sh                      # Homebrew installation and package management
-│   ├── link.sh                      # Symlink management with stow
-│   ├── macos.sh                     # macOS defaults configuration
-│   ├── macos_check.sh               # Check drift between macos.sh and current settings
-│   ├── install-vscode-extensions.sh # Install VS Code extensions
-│   ├── vscode_check.sh             # Check drift between extensions.txt and local extensions
-│   └── vscode_sync.sh              # Sync local extensions to extensions.txt
+│   ├── brew.sh                       # Homebrew installation and package management
+│   ├── link.sh                       # Symlink management with stow
+│   ├── macos.sh                      # macOS defaults configuration
+│   ├── macos_check.sh                # Check drift between macos.sh and current settings
+│   ├── install-vscode-extensions.sh  # Install VS Code extensions
+│   ├── vscode_check.sh               # Check drift between extensions.txt and local extensions
+│   └── vscode_sync.sh                # Sync local extensions to extensions.txt
 ├── zsh/
 │   ├── .zshrc
 │   └── .zprofile
