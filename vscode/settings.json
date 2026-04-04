@@ -11,6 +11,7 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "git.enableSmartCommit": true,
+    "git.autofetch": true,
     "claudeCode.preferredLocation": "panel",
     "workbench.startupEditor": "none",
     "editor.fontLigatures": true,
@@ -19,8 +20,11 @@
         100
     ],
     "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.guides.bracketPairs": true,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
     "files.autoSave": "onFocusChange",
     "terminal.integrated.hideOnStartup": "never"
 }
