@@ -4,6 +4,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 MACOS_SH="$SCRIPT_DIR/macos.sh"
 
+echo "=== macOS defaults ==="
+echo ""
+
 diff_count=0
 
 while IFS= read -r line; do
@@ -44,3 +47,5 @@ else
     echo "  - macos.sh の設定をMacに適用する場合: make macos"
     echo "  - Mac の現在値を macos.sh に反映する場合: macos.sh を手動編集してください"
 fi
+
+echo ""
