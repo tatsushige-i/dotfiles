@@ -20,6 +20,7 @@ while IFS= read -r line; do
             ;;
         -string)
             expected="${expected//\"/}"
+            expected=$(eval echo "$expected")
             ;;
         -int)
             ;;
