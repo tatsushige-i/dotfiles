@@ -59,6 +59,12 @@ make vscode-extensions
 
 ### Maintenance - Check
 
+Run all check targets at once:
+
+```bash
+make check
+```
+
 Check for drift between macos.sh and current macOS settings:
 
 ```bash

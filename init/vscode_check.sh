@@ -9,6 +9,9 @@ if ! command -v code &>/dev/null; then
     exit 1
 fi
 
+echo "=== VS Code extensions ==="
+echo ""
+
 local_extensions=$(code --list-extensions | sort)
 repo_extensions=$(sort "$EXTENSIONS_FILE")
 
@@ -42,3 +45,5 @@ else
     echo "  - extensions.txt の拡張機能をインストールする場合: make vscode-extensions"
     echo "  - ローカルの状態を extensions.txt に反映する場合: make vscodesync"
 fi
+
+echo ""
