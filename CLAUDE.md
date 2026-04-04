@@ -10,12 +10,7 @@ macOS dotfiles repository. Manages Homebrew, Git, Zsh, and VS Code configuration
 
 ### Symlink structure (stow)
 
-`init/link.sh` uses GNU stow to create symlinks:
-
-- `zsh/`, `git/` → `$HOME`
-- `vscode/` → `~/Library/Application Support/Code/User`
-
-Uses `--adopt` to incorporate existing files at the target, then restores repo versions with `git checkout -- .`.
+`init/link.sh` uses GNU stow to create symlinks. See [README.md](README.md#make) for the symlink mapping.
 
 ### Claude Code Skills
 

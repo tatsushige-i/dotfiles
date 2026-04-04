@@ -38,6 +38,13 @@ Create symlinks with stow:
 make link
 ```
 
+| Source | Target |
+|---|---|
+| `zsh/`, `git/` | `$HOME` |
+| `vscode/` | `~/Library/Application Support/Code/User` |
+
+Uses `--adopt` to incorporate existing files, then restores repo versions with `git checkout -- .`.
+
 Apply macOS defaults:
 
 ```bash
