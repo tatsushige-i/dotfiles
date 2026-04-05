@@ -8,6 +8,9 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock mineffect -string "scale"
 defaults write com.apple.dock show-recents -bool false
+defaults write com.apple.dock largesize -int 81
+defaults write com.apple.dock wvous-br-corner -int 14
+defaults write com.apple.dock wvous-br-modifier -int 0
 
 # Finder
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
@@ -45,6 +48,7 @@ defaults write com.apple.screencapture location -string "$HOME/Screenshots"
 
 # Misc
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
 # Apply changes
 killall Dock Finder SystemUIServer
