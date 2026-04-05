@@ -17,6 +17,11 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Keyboard
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Input
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
