@@ -16,8 +16,6 @@ config.font_size = 13.0                    -- フォントサイズ
 config.use_ime = true                      -- 日本語IMEを有効化
 config.scrollback_lines = 10000            -- スクロールバック行数
 config.audible_bell = "Disabled"           -- ビープ音を無効化
-config.initial_cols = 120                  -- 初期ウィンドウ幅（列数）
-config.initial_rows = 35                   -- 初期ウィンドウ高さ（行数）
 
 -- 背景
 config.background = background                   -- 背景画像（background.luaで定義）
