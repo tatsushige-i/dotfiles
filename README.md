@@ -114,7 +114,8 @@ dotfiles/
 ├── wezterm/.config/wezterm/
 │   ├── wezterm.lua                   # Main configuration
 │   ├── background.lua                # Background layers (gradient + image)
-│   └── keybinds.lua                  # Key bindings
+│   ├── keybinds.lua                  # Key bindings
+│   └── background_night.png          # Background image (Git LFS)
 ├── starship/.config/
 │   └── starship.toml                 # Starship prompt configuration
 └── vscode/

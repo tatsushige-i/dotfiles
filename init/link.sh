@@ -3,6 +3,12 @@ set -euo pipefail
 
 DOTFILES_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
+# Materialize Git LFS objects in the working tree before stow runs,
+# so binary assets are linked as real files, not 132-byte LFS pointers.
+cd "$DOTFILES_DIR"
+git lfs install --local
+git lfs pull
+
 PACKAGES=(zsh git wezterm starship)
 
 for pkg in "${PACKAGES[@]}"; do
