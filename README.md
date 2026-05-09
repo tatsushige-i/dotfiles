@@ -20,7 +20,7 @@ Make targets are organized into the following categories:
 
 ### Setup
 
-Full setup (runs brew + link + macos + vscode-extensions):
+Full setup (runs brew + link + macos + vscode-extensions + intellij-keymap):
 
 ```bash
 make init
@@ -57,6 +57,12 @@ Install VS Code extensions from `vscode/extensions.txt`:
 make vscode-extensions
 ```
 
+Install IntelliJ IDEA keymaps from `intellij/keymaps/` (symlinks into all detected `IdeaIC*` / `IdeaIU*` directories):
+
+```bash
+make intellij-keymap
+```
+
 ### Maintenance - Check
 
 Run all check targets at once:
@@ -75,6 +81,12 @@ Check for differences between `vscode/extensions.txt` and locally installed exte
 
 ```bash
 make vscodecheck
+```
+
+Check for drift between `intellij/keymaps/` and the installed IntelliJ IDEA keymap symlinks:
+
+```bash
+make intellijcheck
 ```
 
 ### Maintenance - Sync
@@ -104,7 +116,9 @@ dotfiles/
 │   ├── macos_check.sh                # Check drift between macos.sh and current settings
 │   ├── install-vscode-extensions.sh  # Install VS Code extensions
 │   ├── vscode_check.sh               # Check drift between extensions.txt and local extensions
-│   └── vscode_sync.sh                # Sync local extensions to extensions.txt
+│   ├── vscode_sync.sh                # Sync local extensions to extensions.txt
+│   ├── install-intellij-keymap.sh    # Symlink IntelliJ IDEA keymaps into JetBrains config dirs
+│   └── intellij_check.sh             # Check drift of IntelliJ IDEA keymap symlinks
 ├── zsh/
 │   ├── .zshrc
 │   └── .zprofile
@@ -118,9 +132,12 @@ dotfiles/
 │   └── background_night.png          # Background image (Git LFS)
 ├── starship/.config/
 │   └── starship.toml                 # Starship prompt configuration
-└── vscode/
-    ├── settings.json
-    ├── keybindings.json
-    ├── mcp.json           # MCP server configuration
-    └── extensions.txt
+├── vscode/
+│   ├── settings.json
+│   ├── keybindings.json
+│   ├── mcp.json           # MCP server configuration
+│   └── extensions.txt
+└── intellij/
+    └── keymaps/
+        └── macOS.xml                 # IntelliJ IDEA custom keymap
 ```

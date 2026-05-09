@@ -1,9 +1,9 @@
 SHELL := /bin/bash
 
-.PHONY: init brew link macos vscode-extensions check macoscheck vscodecheck brewsync vscodesync
+.PHONY: init brew link macos vscode-extensions intellij-keymap check macoscheck vscodecheck intellijcheck brewsync vscodesync
 
 # Setup
-init: brew link macos vscode-extensions
+init: brew link macos vscode-extensions intellij-keymap
 
 brew:
 	@bash init/brew.sh
@@ -17,14 +17,20 @@ macos:
 vscode-extensions:
 	@bash init/install-vscode-extensions.sh
 
+intellij-keymap:
+	@bash init/install-intellij-keymap.sh
+
 # Maintenance - Check
-check: macoscheck vscodecheck
+check: macoscheck vscodecheck intellijcheck
 
 macoscheck:
 	@bash init/macos_check.sh
 
 vscodecheck:
 	@bash init/vscode_check.sh
+
+intellijcheck:
+	@bash init/intellij_check.sh
 
 # Maintenance - Sync
 brewsync:
