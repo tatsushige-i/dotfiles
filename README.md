@@ -71,7 +71,7 @@ Run all check targets at once:
 make check
 ```
 
-Check for drift between macos.sh and current macOS settings:
+Check for drift between setup-macos.sh and current macOS settings:
 
 ```bash
 make macoscheck
@@ -109,16 +109,18 @@ make vscodesync
 dotfiles/
 ├── Makefile
 ├── Brewfile
-├── init/
-│   ├── brew.sh                       # Homebrew installation and package management
-│   ├── link.sh                       # Symlink management with stow
-│   ├── macos.sh                      # macOS defaults configuration
-│   ├── macos_check.sh                # Check drift between macos.sh and current settings
-│   ├── install-vscode-extensions.sh  # Install VS Code extensions
-│   ├── vscode_check.sh               # Check drift between extensions.txt and local extensions
-│   ├── vscode_sync.sh                # Sync local extensions to extensions.txt
-│   ├── install-intellij-keymap.sh    # Symlink IntelliJ IDEA keymaps into JetBrains config dirs
-│   └── intellij_check.sh             # Check drift of IntelliJ IDEA keymap symlinks
+├── init/                             # Setup scripts (環境構築・インストール)
+│   ├── setup-brew.sh                 # Homebrew installation and package management
+│   ├── setup-link.sh                 # Symlink management with stow
+│   ├── setup-macos.sh                # macOS defaults configuration
+│   ├── setup-vscode-extensions.sh    # Install VS Code extensions
+│   └── setup-intellij-keymap.sh      # Symlink IntelliJ IDEA keymaps into JetBrains config dirs
+├── check/                            # Drift check scripts (既存設定と現状との差分確認)
+│   ├── check-macos.sh                # Check drift between setup-macos.sh and current settings
+│   ├── check-vscode.sh               # Check drift between extensions.txt and local extensions
+│   └── check-intellij.sh             # Check drift of IntelliJ IDEA keymap symlinks
+├── sync/                             # Sync scripts (ローカル状態をリポジトリへ反映)
+│   └── sync-vscode.sh                # Sync local extensions to extensions.txt
 ├── zsh/
 │   ├── .zshrc
 │   └── .zprofile

@@ -13,10 +13,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run ShellCheck
+      - name: Run ShellCheck (init)
         uses: ludeeus/action-shellcheck@2.0.0
         with:
           scandir: init
+
+      - name: Run ShellCheck (check)
+        uses: ludeeus/action-shellcheck@2.0.0
+        with:
+          scandir: check
+
+      - name: Run ShellCheck (sync)
+        uses: ludeeus/action-shellcheck@2.0.0
+        with:
+          scandir: sync
 
   stow-dry-run:
     name: Stow dry-run

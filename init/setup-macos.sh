@@ -65,4 +65,4 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # Apply changes
 killall Dock Finder SystemUIServer
 
-echo "macos.sh completed."
+echo "setup-macos.sh completed."

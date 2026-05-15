@@ -6,35 +6,35 @@ SHELL := /bin/bash
 init: brew link macos vscode-extensions intellij-keymap
 
 brew:
-	@bash init/brew.sh
+	@bash init/setup-brew.sh
 
 link:
-	@bash init/link.sh
+	@bash init/setup-link.sh
 
 macos:
-	@bash init/macos.sh
+	@bash init/setup-macos.sh
 
 vscode-extensions:
-	@bash init/install-vscode-extensions.sh
+	@bash init/setup-vscode-extensions.sh
 
 intellij-keymap:
-	@bash init/install-intellij-keymap.sh
+	@bash init/setup-intellij-keymap.sh
 
 # Maintenance - Check
 check: macoscheck vscodecheck intellijcheck
 
 macoscheck:
-	@bash init/macos_check.sh
+	@bash check/check-macos.sh
 
 vscodecheck:
-	@bash init/vscode_check.sh
+	@bash check/check-vscode.sh
 
 intellijcheck:
-	@bash init/intellij_check.sh
+	@bash check/check-intellij.sh
 
 # Maintenance - Sync
 brewsync:
 	brew bundle dump --file=Brewfile --force
 
 vscodesync:
-	@bash init/vscode_sync.sh
+	@bash sync/sync-vscode.sh

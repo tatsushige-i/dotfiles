@@ -48,7 +48,13 @@ Format: `<prefix><concise-english-description>` (hyphens separated)
 
 ### Script Placement
 
-初期化・セットアップ用スクリプトは `init/` ディレクトリに配置する（`scripts/` は使用しない）。
+セットアップ・チェック・同期スクリプトは責務ごとに以下のディレクトリへ配置する (`scripts/` は使用しない):
+
+- `init/`: 環境構築・インストール (`setup-` プレフィックス)
+- `check/`: 既存設定と現状との差分確認 (`check-` プレフィックス)
+- `sync/`: ローカル状態をリポジトリへ反映 (`sync-` プレフィックス)
+
+ファイル名はハイフン区切りの kebab-case とする。
 
 ### Target Order
 
