@@ -14,4 +14,4 @@ fi
 echo "Installing packages from Brewfile..."
 brew bundle --file="$DOTFILES_DIR/Brewfile"
 
-echo "brew.sh completed."
+echo "setup-brew.sh completed."

@@ -48,4 +48,4 @@ for product_dir in "${PRODUCT_DIRS[@]}"; do
     done
 done
 
-echo "install-intellij-keymap.sh completed."
+echo "setup-intellij-keymap.sh completed."

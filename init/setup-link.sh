@@ -25,4 +25,4 @@ stow -v -d "$DOTFILES_DIR" -t "$VSCODE_TARGET" --adopt vscode
 cd "$DOTFILES_DIR"
 git checkout -- .
 
-echo "link.sh completed."
+echo "setup-link.sh completed."

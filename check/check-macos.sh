@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-MACOS_SH="$SCRIPT_DIR/macos.sh"
+MACOS_SH="$SCRIPT_DIR/../init/setup-macos.sh"
 
 echo "=== macOS defaults ==="
 echo ""
@@ -40,12 +40,12 @@ while IFS= read -r line; do
 done < "$MACOS_SH"
 
 if [[ $diff_count -eq 0 ]]; then
-    echo "差分なし: macos.sh の全設定が現在の値と一致しています。"
+    echo "差分なし: setup-macos.sh の全設定が現在の値と一致しています。"
 else
     echo ""
     echo "$diff_count 件の差分があります。"
-    echo "  - macos.sh の設定をMacに適用する場合: make macos"
-    echo "  - Mac の現在値を macos.sh に反映する場合: macos.sh を手動編集してください"
+    echo "  - setup-macos.sh の設定をMacに適用する場合: make macos"
+    echo "  - Mac の現在値を setup-macos.sh に反映する場合: setup-macos.sh を手動編集してください"
 fi
 
 echo ""
