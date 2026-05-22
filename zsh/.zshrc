@@ -54,3 +54,8 @@ _dotfiles_dirty_check() {
     fi
 }
 _dotfiles_dirty_check
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/tatsushige.ishikawa/.lmstudio/bin"
+# End of LM Studio CLI section
+

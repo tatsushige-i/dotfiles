@@ -1,4 +1,5 @@
 anthropic.claude-code
+bierner.markdown-mermaid
 github.copilot-chat
 github.vscode-github-actions
 ms-azuretools.vscode-containers
