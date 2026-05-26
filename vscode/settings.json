@@ -26,5 +26,6 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.autoSave": "onFocusChange",
-    "terminal.integrated.hideOnStartup": "never"
+    "terminal.integrated.hideOnStartup": "never",
+    "extensions.ignoreRecommendations": true
 }
