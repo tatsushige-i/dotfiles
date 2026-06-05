@@ -11,7 +11,7 @@ return {
     repeat_x = "NoRepeat",
     repeat_y = "NoRepeat",
     opacity = 0.5,                               -- 透明度（0.0〜1.0、低いほど透明）
-    hsb = { brightness = 0.25, saturation = 0.9 },  -- 暗めに抑えて文字の可読性を確保
+    hsb = { brightness = 0.4, saturation = 0.9 },  -- 暗めに抑えて文字の可読性を確保
   },
   -- 暗いオーバーレイレイヤー（最前面）
   {
@@ -20,6 +20,6 @@ return {
     height = "100%",
     repeat_x = "NoRepeat",
     repeat_y = "NoRepeat",
-    opacity = 0.7,                               -- 画像全体に黒を重ね、明るいスポットを一律に抑制
+    opacity = 0.5,                               -- 画像全体に黒を重ね、明るいスポットを一律に抑制
   },
 }
