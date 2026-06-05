@@ -19,7 +19,7 @@ config.audible_bell = "Disabled"           -- ビープ音を無効化
 
 -- 背景
 config.background = background                   -- 背景画像（background.luaで定義）
-config.window_background_opacity = 0.88          -- ウィンドウの透過度
+config.window_background_opacity = 0.95          -- ウィンドウの透過度
 config.macos_window_background_blur = 25         -- macOSの背景ぼかし強度
 config.window_background_gradient = {
   colors = { "#000000" },                        -- グラデーション（黒単色）
